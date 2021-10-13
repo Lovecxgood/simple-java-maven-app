@@ -12,7 +12,6 @@ pipeline {
         stage('windows') {
           steps {
             echo 'windows'
-            bat 'node -v'
           }
         }
 
