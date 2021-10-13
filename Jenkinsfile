@@ -1,9 +1,38 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+    stage('Build') {
       steps {
-        echo 'hello world'
+        echo 'build'
+      }
+    }
+
+    stage('Test') {
+      parallel {
+        stage('windows') {
+          steps {
+            echo 'windows'
+          }
+        }
+
+        stage('linux') {
+          steps {
+            echo 'linux'
+          }
+        }
+
+        stage('macos') {
+          steps {
+            echo 'macos'
+          }
+        }
+
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'deploy'
       }
     }
 
