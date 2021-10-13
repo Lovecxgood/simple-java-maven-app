@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         echo 'build'
-        bat 'npm -v'
       }
     }
 
@@ -13,6 +12,7 @@ pipeline {
         stage('windows') {
           steps {
             echo 'windows'
+            bat 'node -v'
           }
         }
 
